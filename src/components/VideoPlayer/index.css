@@ -1,0 +1,75 @@
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  top: 0;
+  /* TODO:right: calc(); */
+  background: rgb(150, 150, 150);
+  display: none;
+}
+.timeline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  top: 0;
+  /* TODO:right: calc(); */
+  background: red;
+}
+.timeline-container:hover .timeline {
+  height: 100%;
+}
+
+.timeline-container:hover .timeline::before {
+  display: block;
+}
+
+.slider {
+  width: 0px;
+  transform: scale(0);
+ 
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 10px;
+  height: 10px;
+  background: white;
+  cursor: pointer;
+  border-radius: 50px;
+}
+
+.volume:hover .slider {
+  outline: none;
+  width: 50px;
+  transform: scale(1);
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  top: 0;
+  right: calc(100% - var(--preview-position) * 100%);
+  background: rgb(150, 150, 150);
+  display: none;
+}
+.timeline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  top: 0;
+  right: calc(100% - var(--progress-position) * 100%);
+  background: red;
+}
+
+.timeline-container:hover .timeline {
+  height: 100%;
+}
+.timeline-container:hover .timeline::before {
+  display: block;
+}

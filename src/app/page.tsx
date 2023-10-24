@@ -3,10 +3,10 @@
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/redux/store";
 import { useEffect } from "react";
-import { setAllVideos } from "@/redux/features/videoSlice";
 import Navbar from "@/components/Navbar";
 import Sidebar from "@/components/Sidebar";
 import VideoCard from "@/components/VideoCard";
+import Link from "next/link";
 
 export default function Home() {
   const videos = useSelector((state: RootState) => state.videoReducer.videos);
@@ -34,15 +34,17 @@ export default function Home() {
         <div className="grid gap-2 grid-cols-[repeat(auto-fill,minmax(14rem,1fr))]">
           {videos.map((video) => {
             return (
-              <VideoCard
-                id={video.id}
-                channelName={video.channelName}
-                channelImg={video.channelImg}
-                timeStamp={video.timeStamp}
-                title={video.title}
-                videoUrl={video.videoUrl}
-                views={video.views}
-              />
+              <Link href={`/${video.id}`} key={video.id} >
+                <VideoCard
+                  id={video.id}
+                  channelName={video.channelName}
+                  channelImg={video.channelImg}
+                  timeStamp={video.timeStamp}
+                  title={video.title}
+                  videoUrl={video.videoUrl}
+                  views={video.views}
+                />
+              </Link>
             );
           })}
         </div>

@@ -16,7 +16,7 @@ const Sidebar = () => {
   return (
     <>
       {isSidebaropen ? (
-        <aside className="flex h-screen w-44 flex-col overflow-y-auto px-5 py-8 fixed mt-12">
+        <aside className="flex h-screen w-44 flex-col overflow-y-auto px-5 py-8 fixed mt-12 z-50 bg-white">
           <div className="flex flex-1 flex-col justify-between">
             <nav className="space-y-6 -mx-3">
               <div className="space-y-3">
@@ -83,7 +83,7 @@ const Sidebar = () => {
           <nav className="flex flex-1 flex-col items-center space-y-6">
             <Link
               href="/"
-              className="rounded-lg p-1.5 text-gray-700 transition-colors duration-200 hover:bg-gray-100 "
+              className="rounded-lg p-1.5 text-gray-700 transition-colors duration-200 hover:bg-gray-100 cursor-pointer"
             >
               <HomeSvg isSelected={false} />
             </Link>
