@@ -1,11 +1,15 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
-import videoReducer from "./features/videoSlice";
+import VideoReducer from "./features/videoSlice";
 import MenuReducer from "./features/MenuToggleSlice";
+import MoreButtonReducer from "./features/MoreButtonToggleSlice";
+import UploadVideoReducer from "./features/UploadVideoSlice";
 
 const rootReducer = combineReducers({
   // TODO:
-  videoReducer,
+  VideoReducer,
   MenuReducer,
+  MoreButtonReducer,
+  UploadVideoReducer,
 });
 export const store = configureStore({
   reducer: rootReducer,

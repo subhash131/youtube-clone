@@ -2,6 +2,7 @@ import CreateSvg from "@/assets/CreateSvg";
 import NotificationSvg from "@/assets/NotificationSvg";
 import YoutubeSvg from "@/assets/YoutubeSvg";
 import { toggleMenu } from "@/redux/features/MenuToggleSlice";
+import { toggleMoreOption } from "@/redux/features/MoreButtonToggleSlice";
 import { Menu, Mic, MoreVertical, Search, UserCircle2 } from "lucide-react";
 import React from "react";
 import { useDispatch } from "react-redux";
@@ -54,7 +55,10 @@ const Navbar = () => {
               </div>
             ) : (
               <div className="flex gap-2">
-                <div className="p-2 cursor-pointer rounded-full hover:border">
+                <div
+                  className="p-2 cursor-pointer rounded-full hover:border-gray-200 border border-white"
+                  onClick={() => dispatch(toggleMoreOption())}
+                >
                   <MoreVertical size={24} strokeWidth={1} />
                 </div>
                 <div className="text-[#075ed4] flex gap-2 rounded-3xl border py-2 px-3 w-28 cursor-pointer">

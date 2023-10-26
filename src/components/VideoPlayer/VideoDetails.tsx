@@ -1,28 +1,37 @@
-
 // import { AppContext } from "@/providers";
 import { ThumbsDown, ThumbsUp } from "lucide-react";
 import Image from "next/image";
 import React from "react";
 
-const VideoDetails = (
-//     {
-//   address,
-//   title,
-//   likes,
-//   createdAt,
-//   index,
-// }: {
-//   address: string;
-//   title: string;
-//   likes: string;
-//   createdAt: string;
-//   index: number;
-// }
-) => {
+// id: "",
+//     title: "",
+//     channelName: "",
+//     videoUrl: "",
+//     channelImg: "",
+//     timeStamp: "",
+//     views: "",
+
+const VideoDetails = ({
+  channelName,
+  title,
+  likes,
+  timeStamp,
+  channelImg,
+  id,
+  views,
+}: {
+  channelName: string;
+  title: string;
+  likes: string;
+  timeStamp: string;
+  id: string;
+  channelImg: string;
+  views: string;
+}) => {
   //   const { likeVideo } = useContext(AppContext);
   return (
-    <div className="w-full h-20 p-2">
-      <div className="text-xl font-semibold py-2">{"title"}</div>
+    <div className="w-full h-20 p-2 ">
+      <div className="text-xl font-semibold py-2 w-[90%]">{title}</div>
       <div className="flex gap-4">
         <div>
           <Image
@@ -31,14 +40,13 @@ const VideoDetails = (
             width="50"
             height="30"
             alt="Chanel Icon"
-            
           />
         </div>
-        <div>
-          <div className="text-lg font-bold">{`${"address"}`}</div>
-          <div>{"createdAt"}</div>
-        </div>
         <div className="items-center justify-center flex w-full">
+          <div>
+            <div className="text-lg font-bold ">{`${channelName}`}</div>
+            <div>{timeStamp}</div>
+          </div>
           {/* <div className='rounded-lg px-2'>Join</div> */}
           <div className="flex  gap-2 flex-grow ">
             <div className="bg-black rounded-full  text-white p-2 px-4 ml-10">
@@ -51,7 +59,7 @@ const VideoDetails = (
               onClick={() => {}}
             >
               <ThumbsUp />
-              <p className="leading-[2] "> {"likes"}</p>
+              <p className="leading-[2] "> {likes}</p>
             </div>
             <div className="bg-[#959494] w-[1px] h-8" />
             <div className="flex gap-2 cursor-pointer hover:bg-[#bab9ba] w-full h-full p-2 px-4 rounded-r-full items-center">
